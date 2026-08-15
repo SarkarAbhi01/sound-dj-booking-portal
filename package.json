@@ -1,0 +1,19 @@
+{
+  "name": "sound-dj-booking-portal",
+  "version": "1.0.0",
+  "description": "A full-stack web application for sound/DJ equipment rental businesses to manage customer bookings, sound rental setup, date scheduling, and advance payment receipts — fully bilingual in **English and Hindi (हिंदी)**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^14.0.0"
+  }
+}
