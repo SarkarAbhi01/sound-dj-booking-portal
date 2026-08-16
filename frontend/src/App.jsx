@@ -14,7 +14,6 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import { AuthProvider } from './context/AuthContext';
-import BodySections from "./components/BodySections";
 
 export default function App() {
   return (
