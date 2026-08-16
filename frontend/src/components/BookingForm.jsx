@@ -88,7 +88,7 @@ export default function BookingForm({ selectedPackage, selectedSoundSet, selecte
   };
 
   const renderCustomField = (f) => {
-    const label = isHi ? f.label_hi : f.label_en;
+    //const label = isHi ? f.label_hi : f.label_en;
     const value = customValues[f.field_key] || '';
     if (f.field_type === 'textarea') {
       return <textarea rows={2} value={value} onChange={(e) => updateCustom(f.field_key, e.target.value)} />;
