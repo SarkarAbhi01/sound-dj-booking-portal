@@ -1,23 +1,24 @@
 const { Pool } = require('pg');
 require('dotenv').config();
-const isProduction = process.env.NODE_ENV === 'production';
-const pool = new Pool({
-  host: process.env.PGHOST || 'localhost',
-  port: process.env.PGPORT || 5432,
-  user: process.env.PGUSER || 'postgres',
-  password: process.env.PGPASSWORD || 'postgres',
-  database: process.env.PGDATABASE || 'sound_dj_booking',
 
-   // Render PostgreSQL requires SSL
-  ssl: isProduction
-    ? {
-        rejectUnauthorized: false,
-      }
-    : false,
+console.log('========== DB DEBUG ==========');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('DATABASE_URL EXISTS:', !!process.env.DATABASE_URL);
+console.log('DATABASE_URL LENGTH:', process.env.DATABASE_URL?.length || 0);
+console.log('PGHOST:', process.env.PGHOST || 'NOT SET');
+console.log('PGUSER:', process.env.PGUSER || 'NOT SET');
+console.log('PGDATABASE:', process.env.PGDATABASE || 'NOT SET');
+console.log('==============================');
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 pool.on('error', (err) => {
-  console.error('Unexpected PostgreSQL pool error:', err);
+  console.error('🔥 PostgreSQL Pool Error:', err);
 });
 
 module.exports = {
